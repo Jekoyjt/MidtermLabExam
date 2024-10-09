@@ -1,0 +1,42 @@
+import 'package:flutter/material.dart';
+
+class Counter extends StatelessWidget {
+  //CHANGED THE STATEFUL WIDGET TO STATELESSWIDGET
+  const Counter({super.key});
+
+  //DELETED SOME LINES OF CODE AS PER INSTRUCTIONS
+  void handlePress() { 
+    print('BUTTON CLICKED');
+  }
+  //CREATED A CALLBACK METHOD
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        ElevatedButton(
+          onPressed: handlePress, // UPDATED THE CALLBACK METHOD NAME
+          // CALLED THE CALLBACK METHOD THROUGH ONPRESSED
+          child: const Text('CLICK ME'), // UPDATED BUTTON TEXT
+        ),
+        const SizedBox(width: 16),
+        Text('Count:'),
+      ],
+    );
+  }
+}
+
+void main() {
+  runApp(
+    const MaterialApp(
+      home: Scaffold(
+        body: Center(
+          child: Counter(),
+        ),
+      ),
+    ),
+  );
+}
+
+
+https://zapp.run/edit/flutter-z53s066q53t0?entry=lib/main.dart&file=lib/main.dart
